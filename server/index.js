@@ -2,14 +2,18 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import EmployeeModel from "./models/Employee.js";
+
+import dotenv from "dotenv";
+dotenv.config();
+
 const app = express();
+
+const dburi = process.env.DB_URL;
 app.use(express.json());
 app.use(cors());
 
 mongoose
-  .connect(
-    "mongodb+srv://mohdsalman01a:hnnzd2xmxfcuqB6I@cluster0.w29xqfx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(dburi)
   .then(console.log("mogngo setup success"))
   .catch((er) => {
     console.log(`Err..${er}`);
