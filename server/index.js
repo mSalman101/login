@@ -14,7 +14,7 @@ app.use(cors());
 
 mongoose
   .connect(dburi)
-  .then(console.log("mogngo setup success"))
+  .then(console.log("mongo setup success"))
   .catch((er) => {
     console.log(`Err..${er}`);
   });
@@ -44,6 +44,8 @@ app.get("/", (req, res) => {
   res.send("<p>hello user i m server</p>");
 });
 
-app.listen(3000, (req, res) => {
-  console.log("server running on 3000");
+const port = process.env.PORT;
+
+app.listen(port, (req, res) => {
+  console.log(`server running on ${port}`);
 });
