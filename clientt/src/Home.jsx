@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
   return (
     <>
-      <div>Home Component</div>
+      <div>Home Component unlocked &#x1F513;</div>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis
         officia vitae minima ipsum autem iste nobis, unde ex cum, ab labore aut
